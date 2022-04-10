@@ -1,0 +1,5 @@
+{{ $image := resources.GetMatch .Params.ImagePath }}
+{{ $image = $image.Resize "800x" }}
+{{ with $image }}
+<img src="{{ $image.RelPermalink }}"/>
+{{ end }}
